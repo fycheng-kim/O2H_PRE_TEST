@@ -1,5 +1,6 @@
 pwd=
-tws_log_path="/tmp/tws_log_$(date +"%Y%m%d%H%M%S")"
+tws_log_path="/tmp/tws_log_$(date +"%s")"
+echo $tws_log_path
 echo "======================================================================" >> ./tws_tri_tuser_test_01.log
 
 sshpass -p ${pwd} ssh twsuser@172.19.250.22 /bin/bash <<END_SCRIPT &>> ./tws_tri_tuser_test_01.log
@@ -9,6 +10,4 @@ END_SCRIPT
 tws_returncd=$?
 echo "tws return code: $tws_returncd"
 
-sshpass -p ${pwd} ssh twsuser@172.19.250.22 /bin/bash <<END_SCRIPT &>> ./tws_tri_tuser_test_01.log
-cat $tws_log_path
-END_SCRIPT
+sshpass -p ${pwd} ssh twsuser@172.19.250.22:${tws_log_path} ./
