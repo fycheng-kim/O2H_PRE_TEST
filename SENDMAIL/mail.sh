@@ -64,7 +64,7 @@ if [ -z $MAIL_CONFIG_PATH ]; then
 	echo "MAIL_CONFIG_PATH: $MAIL_CONFIG_PATH"
 fi
 
-/opt/athemaster/kafka/mail/kafka-schema-registry-consumer-example-0.0.1-SNAPSHOT.jar \
+/opt/athemaster/kafka/mail/email-alert-1.0-SNAPSHOT-jar-with-dependencies.jar \
 $PROGRAM_NAME \
 $LOG_DATE_TIME \
 $ERR_MSG \
